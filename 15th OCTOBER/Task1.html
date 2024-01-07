@@ -1,0 +1,76 @@
+<!-- The var() function is used to define and apply custom properties, also known as CSS variables. 
+    CSS variables allow you to store and reuse values throughout your stylesheets, making it easier to manage and update styles consistently. 
+    The var() function is used to reference the value of a CSS variable and apply it to a property.
+
+    Here's an example of how you can use the var() function to set background colors for buttons with the IDs primaryBtn and secondaryBtn: -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUTTON EXAMPLE</title>
+    <style>
+        :root{
+            --primary-color:#00b7ff;
+            --secondary-color:#6c757d;
+        }
+        body{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+        #primaryBtn{
+            background-color:var(--primary-color);
+            height: 50px;
+            width: 200px;
+            border: none;
+            padding: 10px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: width 0.5s ,height 0.5s, font-size 0.5s;
+        }
+        #secondaryBtn{
+            background-color: var(--secondary-color);
+            border: none;
+            height: 50px;
+            width: 200px;
+            padding: 10px 30px;
+            color: white;
+            border-radius: 50px;
+            transition: width 0.5s ,height 0.5s,font-size 0.5s;
+            cursor: pointer;
+        }
+        #primaryBtn:hover{
+            width: 250px;
+            height: 75px;
+            font-size: larger;
+        }
+        #secondaryBtn:hover{
+            width: 250px;
+            height: 75px;
+            font-size: larger;
+        }
+
+
+    </style>
+</head>
+<body>
+    <button id="primaryBtn">Primary Button</button>
+    <button id="secondaryBtn">Secondary Button</button>
+</body>
+</html>
+
+<!-- In this example:
+
+:root 
+    It is a pseudo-class that represents the highest-level parent element in the document (usually the HTML <html> element). 
+
+    It is commonly used to define global CSS variables.
+    (--primaryColor) and (--secondaryColor) are custom property names for the colors you want to use. 
+    These variables are declared within the :root pseudo-class, making them accessible throughout the entire stylesheet.
+    var(--primaryColor) and var(--secondaryColor) are used to reference the values of the corresponding CSS variables when setting the background-color property for the buttons with IDs primaryBtn and secondaryBtn.
+    By using CSS variables, you can easily update the colors across your stylesheet by changing the values assigned to --primaryColor and --secondaryColor in one central location, providing a more maintainable and scalable approach to styling. -->
